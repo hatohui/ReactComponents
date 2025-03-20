@@ -2,12 +2,21 @@
 
 import React, { ReactNode } from "react";
 
-export type DraggableProps = {
+export type DraggableProps<T> = {
   children: ReactNode;
+  data?: T | unknown;
 };
 
-const Draggable = ({ children }: DraggableProps) => {
-  return <div draggable>{children}</div>;
+const Draggable = <T,>({ children, data }: DraggableProps<T>) => {
+  const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
+    event.dataTransfer.setData("application/json", JSON.stringify(data));
+  };
+
+  return (
+    <div draggable onDragStart={handleDragStart}>
+      {children}
+    </div>
+  );
 };
 
 export default Draggable;
