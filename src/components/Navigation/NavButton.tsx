@@ -5,11 +5,17 @@ export type ButtonProp = { label: string; href: string };
 
 export type NavButtonProp = {
   data: ButtonProp;
+  className?: string;
 };
 
-const NavButton = ({ data }: NavButtonProp) => {
+const NavButton = ({ data, className }: NavButtonProp) => {
   return (
-    <Link className="p-2" href={data.href} title={data.label} itemProp="url">
+    <Link
+      className={`p-2 ${className ?? ""}`}
+      href={data.href}
+      title={data.label}
+      itemProp="url"
+    >
       {data.label}
     </Link>
   );

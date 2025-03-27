@@ -13,7 +13,7 @@ const NavHeader = ({ className }: NavHeaderProps) => {
         className="min-h-[40px]"
         width={40}
         height={40}
-        alt=""
+        alt="projects icon"
       />
       <div>TITLE</div>
     </div>
