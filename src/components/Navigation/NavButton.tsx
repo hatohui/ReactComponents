@@ -11,7 +11,7 @@ export type NavButtonProp = {
 const NavButton = ({ data, className }: NavButtonProp) => {
   return (
     <Link
-      className={`p-2 ${className ?? ""}`}
+      className={`p-2 bg-blend-difference translate-x-1 ${className ?? ""}`}
       href={data.href}
       title={data.label}
       itemProp="url"

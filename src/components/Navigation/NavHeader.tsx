@@ -3,19 +3,21 @@ import React from "react";
 
 export type NavHeaderProps = {
   className?: string;
+  title?: string;
+  url?: string;
 };
 
-const NavHeader = ({ className }: NavHeaderProps) => {
+const NavHeader = ({ className, title, url }: NavHeaderProps) => {
   return (
     <div className={"flex gap-3 items-center " + (className ?? "")}>
       <Image
-        src="/temp"
+        src={url ?? "/temp"}
         className="min-h-[40px]"
         width={40}
         height={40}
         alt="projects icon"
       />
-      <div>TITLE</div>
+      <div>{title ?? ""}</div>
     </div>
   );
 };
