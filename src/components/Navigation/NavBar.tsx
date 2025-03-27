@@ -27,7 +27,7 @@ const NavBar = () => {
   ];
 
   const navBarProps: NavBarProps = {
-    title: "An Application",
+    title: "I'm a gorilla",
     iconSrc: "/hello.webp",
   };
 
