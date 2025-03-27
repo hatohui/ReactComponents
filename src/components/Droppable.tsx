@@ -31,7 +31,7 @@ const Droppable = <T,>({
     const jsonData = event.dataTransfer.getData("application/json");
     if (jsonData) {
       const data: T = JSON.parse(jsonData);
-      callBack?.({ event, data });
+      if (callBack) callBack({ event, data });
     }
   };
 
